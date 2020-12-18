@@ -2,6 +2,7 @@ const express = require("express")
 const utils = require("./functions/utils")
 
 const app = express()
+const router = require("./routes/route");
 
 const bodyParser = require("body-parser")
 app.use(bodyParser.json())
@@ -14,16 +15,21 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/id/:name", (req, res) => {
-    res.send({ "id": utils.idRepo(req.params.name) })
+app.use("/",router)
+
+app.use((req,res,next) => {
+    const error = new Error("error message");
+    next(error);
 })
 
-app.post("/bill", (req, res, next) => {
-    /* console.log(res.status)
-    if(res.status !== 200){
-        throw new Error("something broke !");
-    } */
-    res.send({ "total": utils.price(req.body.quantities, req.body.prices, req.body.country, req.body.discount) });
+app.use((err,req,res,next) =>{
+    res.status(err.status || 500)
+    res.send({
+        error:{
+            status:err.status || 500,
+            message:"error message"
+        }
+    })
 })
 
 app.listen(3000, () => console.log("Awaiting requests."))
