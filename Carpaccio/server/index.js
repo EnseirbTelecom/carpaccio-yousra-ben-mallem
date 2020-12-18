@@ -14,16 +14,16 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/id/:name",(req,res)=>{
-    res.send({"id":utils.idRepo(req.params.name)})
+app.get("/id/:name", (req, res) => {
+    res.send({ "id": utils.idRepo(req.params.name) })
 })
 
-app.post("/bill",(req,res)=>{
-    console.log(res.status)
+app.post("/bill", (req, res, next) => {
+    /* console.log(res.status)
     if(res.status !== 200){
         throw new Error("something broke !");
-    }
-    res.send({"total":utils.price(req.body.quantity1,req.body.price1,req.body.quantity2,req.body.price2)});
+    } */
+    res.send({ "total": utils.price(req.body.quantities, req.body.prices, req.body.country, req.body.discount) });
 })
 
-app.listen(3000,() => console.log("Awaiting requests."))
+app.listen(3000, () => console.log("Awaiting requests."))
