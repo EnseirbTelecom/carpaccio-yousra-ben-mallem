@@ -1,13 +1,11 @@
-sudo: false
-
-language: node js
+language: node_js
 
 node_js:
   - node
 
+install:
+  - npm ci
+
 script:
   - npm test
-
-notifications:
-  email: false
 
