@@ -1,0 +1,144 @@
+{
+    "countries": [
+        {
+            "country": "Germany",
+            "code": "DE",
+            "TVA": 20
+        },
+        {
+            "country": "United Kingdom",
+            "code": "UK",
+            "TVA": 21
+        },
+        {
+            "country": "France",
+            "code": "FR",
+            "TVA": 20
+        },
+        {
+            "country": "Italy",
+            "code": "IT",
+            "TVA": 25
+        },
+        {
+            "country": "Spain",
+            "code": "ES",
+            "TVA": 19
+        },
+        {
+            "country": "Poland",
+            "code": "PL",
+            "TVA": 21
+        },
+        {
+            "country": "Romania",
+            "code": "RO",
+            "TVA": 20
+        },
+        {
+            "country": "Netherlands",
+            "code": "NL",
+            "TVA": 20
+        },
+        {
+            "country": "Belgium",
+            "code": "BE",
+            "TVA": 24
+        },
+        {
+            "country": "Greece",
+            "code": "EL",
+            "TVA": 20
+        },
+        {
+            "country": "Czech Republic",
+            "code": "CZ",
+            "TVA": 19
+        },
+        {
+            "country": "Portugal",
+            "code": "PT",
+            "TVA": 23
+        },
+        {
+            "country": "Hungary",
+            "code": "HU",
+            "TVA": 27
+        },
+        {
+            "country": "Sweden",
+            "code": "SE",
+            "TVA": 27
+        },
+        {
+            "country": "Austria",
+            "code": "AT",
+            "TVA": 22
+        },
+        {
+            "country": "Bulgaria",
+            "code": "BG",
+            "TVA": 21
+        },
+        {
+            "country": "Denmark",
+            "code": "DK",
+            "TVA": 21
+        },
+        {
+            "country": "Finland",
+            "code": "FI",
+            "TVA": 21
+        },
+        {
+            "country": "Slovakia",
+            "code": "SK",
+            "TVA": 18
+        },
+        {
+            "country": "Ireland",
+            "code": "IE",
+            "TVA": 21
+        },
+        {
+            "country": "Croatia",
+            "code": "HR",
+            "TVA": 23
+        },
+        {
+            "country": "Lithuania",
+            "code": "LT",
+            "TVA": 23
+        },
+        {
+            "country": "Slovenia",
+            "code": "SI",
+            "TVA": 24
+        },
+        {
+            "country": "Latvia",
+            "code": "LV",
+            "TVA": 20
+        },
+        {
+            "country": "Estonia",
+            "code": "EE",
+            "TVA": 22
+        },
+        {
+            "country": "Cyprus",
+            "code": "CY",
+            "TVA": 21
+        },
+        {
+            "country": "Luxembourg",
+            "code": "LU",
+            "TVA": 25
+        },
+        {
+            "country": "Malta",
+            "code": "MT",
+            "TVA": 20
+        }
+    ]
+}
