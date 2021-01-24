@@ -16,19 +16,4 @@ app.use((req, res, next) => {
 
 app.use('/', router)
 
-app.use((req, res, next) => {
-  const error = new Error('error message')
-  next(error)
-})
-
-app.use((err, req, res, next) => {
-  res.status(err.status || 500)
-  res.send({
-    error: {
-      status: err.status || 500,
-      message: 'error message'
-    }
-  })
-})
-
 module.exports = app
