@@ -31,4 +31,6 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(3000, () => console.log('Awaiting requests.'))
+module.exports = app
+// app.listen(3000, () => console.log('Awaiting requests.'))
+app.listen(3000, () => {})
