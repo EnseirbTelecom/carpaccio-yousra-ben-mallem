@@ -1,6 +1,15 @@
 const request = require('supertest')
 const app = require('../index')
 
+let testServer
+beforeAll(() => {
+  testServer = app.listen(3000)
+})
+
+afterAll((done) => {
+  testServer.close(done)
+})
+
 describe('route', function () {
   test('integration test', async (done) => {
     const res = await request(app)

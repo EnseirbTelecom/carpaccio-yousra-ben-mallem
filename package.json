@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "lint": "standard --fix"
   },
+  "jest":{
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "jest"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,7 +29,9 @@
     "globals": [
       "describe",
       "test",
-      "expect"
+      "expect",
+      "beforeAll",
+      "AfterAll"
     ]
   }
 }
