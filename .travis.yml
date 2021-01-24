@@ -4,7 +4,7 @@ node_js:
   - node
 
 install:
-  - travis wait 10 npm ci
+  - travis_wait 10 npm ci
 
 script:
   - npm test
