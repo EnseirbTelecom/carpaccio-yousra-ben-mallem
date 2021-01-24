@@ -10,17 +10,27 @@ module.exports.idRepo = function (id) {
   }
 }
 
-module.exports.price = function (quantities, prices, country, discount = 'NO_DISCOUNT') {
+module.exports.price = (quantities, prices, country, discount = 'NO_DISCOUNT') => {
   let TVA = 0
   tables.forEach(function (table) {
     if (table.code === country) {
       TVA = table.TVA
     }
   })
-  /* if (TVA == 0) {
-        next(err);
-    } */
-  const priceHT = (quantities[0] || 0) * (prices[0] || 0) + (quantities[1] || 0) * (prices[1] || 0)
+
+  if (TVA === 0) {
+    throw new Error('The country code is unknown !')
+  }
+
+  if (quantities.length !== prices.length) {
+    throw new Error('Quantities and prices must have the same length !')
+  } else {
+    if (quantities.length !== 2) {
+      throw new Error('Quantities and prices must be an array of two elements !')
+    }
+  }
+
+  const priceHT = quantities[0] * prices[0] + quantities[1] * prices[1]
   const priceTTC = priceHT + priceHT * TVA / 100
   const discountedPrice = utils.applydiscount(priceTTC, discount)
   return discountedPrice
@@ -42,7 +52,7 @@ module.exports.progressiveDiscount = function (price) {
   }
 }
 
-module.exports.applydiscount = function (price, discount) {
+module.exports.applydiscount = (price, discount) => {
   switch (discount) {
     case 'NO_DISCOUNT':
       return price
