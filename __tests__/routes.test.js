@@ -1,4 +1,3 @@
-const { expect } = require('chai')
 const request = require('supertest')
 const app = require('../index')
 
@@ -7,8 +6,8 @@ describe('route', function () {
     const res = await request(app)
       .post('/bill')
       .send({ quantities: [10, 20], prices: [5, 2], country: 'IT', discount: 'FLAT_DISCOUNT' })
-    expect(res.body.total).to.equal(78.75)
-    expect(res.statusCode).to.equal(200)
+    expect(res.body.total).toBe(78.75)
+    expect(res.statusCode).toBe(200)
     done()
   })
 })

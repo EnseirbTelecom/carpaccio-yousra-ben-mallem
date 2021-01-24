@@ -7,7 +7,12 @@ router.get('/id/:name', (req, res, next) => {
 })
 
 router.post('/bill', (req, res, next) => {
-  res.status(200).json({ total: utils.price(req.body.quantities, req.body.prices, req.body.country, req.body.discount) })
+  try {
+    const priceTotal = utils.price(req.body.quantities, req.body.prices, req.body.country, req.body.discount)
+    res.status(200).json({ total: priceTotal })
+  } catch (error) {
+    res.send({ err: error.message })
+  }
 })
 
 module.exports = router
